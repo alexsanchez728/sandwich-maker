@@ -6,16 +6,23 @@ var SandwichMaker = (function(oldMaker) {
                         "Olive Oil": 0.50,
                         "No Bread": 0
                       };
-  // Private variable to store the different prices
-  var condimentPrices;
-
 
   // Augment the original object with another method
   oldMaker.getCondiments = function() {
     return condiments;
   };
-    oldMaker.addCondiments = function() {
-    return condiments;
+  for (let i = 0; i < Object.keys(condiments).length; i++) {
+    console.log("looping");
+    const condimentsBox = document.getElementById("condiments-container");
+    let domString = "";
+
+    domString+=    `<label class="form-check-label">`
+    domString+=       `<input class="form-check-input" type="checkbox" value="${Object.keys(condiments)[i]}">`
+    domString+=       ` ${Object.keys(condiments)[i]}`
+    domString+=       `<div class="col-xs-1"</div>`
+    domString+=    `</label>`
+
+   condimentsBox.innerHTML += domString;
   };
 
   // Return the new, augmented object with the new method on it

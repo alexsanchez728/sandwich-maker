@@ -6,18 +6,24 @@ var SandwichMaker = (function(oldMaker) {
                     "Caciocavallo Podolico": 10.00,
                     "No Cheese": 0
                   };
-  // Private variable to store the different prices
-  var cheesePrices;
-
 
   // Augment the original object with another method
   oldMaker.getCheese = function() {
     return cheese;
   };
-    oldMaker.addCheese = function() {
-    return cheese;
-  };
+  for (let i = 0; i < Object.keys(cheese).length; i++) {
+    console.log("looping");
+    const cheeseBox = document.getElementById("cheese-container");
+    let domString = "";
 
+    domString+=    `<label class="form-check-label">`
+    domString+=       `<input class="form-check-input" type="checkbox" value="${Object.keys(cheese)[i]}">`
+    domString+=       ` ${Object.keys(cheese)[i]}`
+    domString+=       `<div class="col-xs-1"</div>`
+    domString+=    `</label>`
+
+   cheeseBox.innerHTML += domString;
+  };
   // Return the new, augmented object with the new method on it
   return oldMaker;
 })(SandwichMaker || {});
