@@ -1,4 +1,4 @@
-// var SandwichMaker = (function(oldSandwichMaker) {
+// var SandwichMaker = (function(oldMaker) {
 
 //   // Private variable to store the price
 //   var totalPrice = 0;
@@ -12,7 +12,7 @@
 // })(SandwichMaker || {});
 
 let myBreads = SandwichMaker.getBreads();
-let myMeats = SandwichMaker.getMeats();
+let myMeats = SandwichMaker.getProteins();
 let myCheese = SandwichMaker.getCheese();
 let myVeggies = SandwichMaker.getVeggies();
 let myCondiments = SandwichMaker.getCondiments();
