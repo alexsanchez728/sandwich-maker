@@ -1,17 +1,18 @@
 
 // This SandwichMaker IIFE augments the original one
 var SandwichMaker = (function(oldMaker) {
-	const proteins = {   "Turkey": 2.00,
+	const proteins = {   
+                    "Turkey": 2.00,
                     "Ham": 3.00,
                     "Boudin": 5.50,
                     "No Meat": 0
-                };
+                    };
   // Augment the original object with another method
   oldMaker.getProteins = function() {
     return proteins;
   };
   for (let i = 0; i < Object.keys(proteins).length; i++) {
-    console.log("looping");
+    // console.log("looping");
     const proteinBox = document.getElementById("protein-container");
     let domString = "";
 

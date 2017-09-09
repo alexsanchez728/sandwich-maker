@@ -1,10 +1,11 @@
 
 // This SandwichMaker IIFE augments the original one
 var SandwichMaker = (function(oldMaker) {
-  const cheese = {  "Chedder": 0.50,
-                    "Swiss": 0.50,
-                    "Caciocavallo Podolico": 10.00,
-                    "No Cheese": 0
+  const cheese = {  
+                  "Chedder": 0.50,
+                  "Swiss": 0.50,
+                  "Caciocavallo Podolico": 10.00,
+                  "No Cheese": 0
                   };
 
   // Augment the original object with another method
@@ -12,7 +13,7 @@ var SandwichMaker = (function(oldMaker) {
     return cheese;
   };
   for (let i = 0; i < Object.keys(cheese).length; i++) {
-    console.log("looping");
+    // console.log("looping");
     const cheeseBox = document.getElementById("cheese-container");
     let domString = "";
 
