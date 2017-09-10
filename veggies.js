@@ -1,18 +1,19 @@
 
 // This SandwichMaker IIFE augments the original one
 var SandwichMaker = (function(oldMaker) {
-	const veggies = {   "Lettuce": 0.50,
-                      "Tomatoes": 0.50,
-                      "Taro": 5.00,
-                      "No Veggies": 0
+	const veggies = {   
+                    "Lettuce": 0.50,
+                    "Tomatoes": 0.50,
+                    "Taro": 5.00,
+                    "No Veggies": 0
                   };
 
   // Augment the original object with another method
-  oldMaker.getVeggies = function() {
+  oldMaker.getVeggies = () => {
     return veggies;
   };
   for (let i = 0; i < Object.keys(veggies).length; i++) {
-    console.log("looping");
+    // console.log("looping");
     const veggiesBox = document.getElementById("veggies-container");
     let domString = "";
 
