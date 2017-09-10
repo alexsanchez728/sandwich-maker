@@ -9,16 +9,21 @@ var finalSandwichPrice = 0;
 
 // Variable to hold topping that the user selects
 let selectedTopping;
-
+let SammieArray = {};
 
 breadBox.addEventListener("change", function(event) {
 
   // Get the value chosen from the DOM
   selectedTopping = event.target.value;
+	console.log(selectedTopping);
   // Determine the price of the topping chosen
   // let toppingPrice;
-	console.log(selectedTopping);
+	// if (event.target.id.indexOf("bread") === 0) {
+	// 	let breadIndex = event.target.id.split("-")[1]
+	// 	SandwichMaker.addBread(breadIndex);
+	// }
 
+	SandwichMaker.addBread(selectedTopping);
 
 })
 
