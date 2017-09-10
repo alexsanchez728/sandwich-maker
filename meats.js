@@ -8,7 +8,7 @@ var SandwichMaker = (function(oldMaker) {
                     "No Meat": 0
                     };
   // Augment the original object with another method
-  oldMaker.getProteins = function() {
+  oldMaker.getProteins = () => {
     return proteins;
   };
   for (let i = 0; i < Object.keys(proteins).length; i++) {

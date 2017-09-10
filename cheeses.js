@@ -9,7 +9,7 @@ var SandwichMaker = (function(oldMaker) {
                   };
 
   // Augment the original object with another method
-  oldMaker.getCheese = function() {
+  oldMaker.getCheese = () => {
     return cheese;
   };
   for (let i = 0; i < Object.keys(cheese).length; i++) {
