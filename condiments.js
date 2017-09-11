@@ -1,31 +1,24 @@
 
 // This SandwichMaker IIFE augments the original one
 var SandwichMaker = (function(oldMaker) {
-	const condiments = {  
-                      "Mayo": 0.25,
-                      "Hummus": 0.75,
-                      "Olive Oil": 0.50,
-                      "No Bread": 0
-                      };
+	const condimentPrices = {"Mayo": 0.25, "Hummus": 0.75, "Olive Oil": 0.50, "No Bread": 0};
+  const condimentKeys = Object.keys(condimentPrices);
 
-  // Augment the original object with another method
+  oldMaker.addCondiment = (selectedTopping) => {
+    SandwichMaker.addItemToSammie(selectedTopping, condimentPrices[selectedTopping])
+    }
   oldMaker.getCondiments = () => {
-    return condiments;
-  };
-  for (let i = 0; i < Object.keys(condiments).length; i++) {
-    // console.log("looping");
-    const condimentsBox = document.getElementById("condiments-container");
-    let domString = "";
+    for (let i = 0; i < condimentKeys.length; i++) {
+      let domString = "";
 
-    domString+=    `<label class="form-check-label">`
-    domString+=       `<input class="form-check-input" type="checkbox" value="${Object.keys(condiments)[i]}">`
-    domString+=       ` ${Object.keys(condiments)[i]}`
-    domString+=       `<div class="col-xs-1"</div>`
-    domString+=    `</label>`
+      domString+=    `<label class="form-check-label">`
+      domString+=       `<input class="form-check-input" type="checkbox" value="${condimentKeys[i]}">`
+      domString+=       ` ${condimentKeys[i]}`
+      domString+=       `<div class="col-xs-1"</div>`
+      domString+=    `</label>`
 
-   condimentsBox.innerHTML += domString;
-  };
-
-  // Return the new, augmented object with the new method on it
+     condimentBox.innerHTML += domString;
+    };
+  }
   return oldMaker;
 })(SandwichMaker || {});
