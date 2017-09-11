@@ -5,61 +5,29 @@ let condimentBox = document.getElementById("condiments-container");
 let veggiesBox = document.getElementById("veggies-container");
 let seePriceBtn = document.getElementById("totalBtn");
 // Variable to hold the final price. Default to 0.
-var finalSandwichPrice = 0;
-
+let finalSandwichPrice = 0;
 // Variable to hold topping that the user selects
 let selectedTopping;
-let SammieArray = {};
+
+let itemsInSandwich;
 
 breadBox.addEventListener("change", function(event) {
+	itemsInSandwich = SandwichMaker.getFinalSandwich();
 
+	if (event.target.value.indexOf("No") === 0) {
+		console.log("No breads pls");
+	}
   // Get the value chosen from the DOM
   selectedTopping = event.target.value;
-	console.log(selectedTopping);
-  // Determine the price of the topping chosen
-  // let toppingPrice;
-	// if (event.target.id.indexOf("bread") === 0) {
-	// 	let breadIndex = event.target.id.split("-")[1]
-	// 	SandwichMaker.addBread(breadIndex);
-	// }
+	console.log("selected Topping", selectedTopping);
 
 	SandwichMaker.addBread(selectedTopping);
+	console.log("finalSandwich items", itemsInSandwich);
+
+	finalSandwichPrice = SandwichMaker.getTotalPrice();
+	console.log("total price in public", finalSandwichPrice);
 
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 proteinBox.addEventListener("change", function(event) {
