@@ -23,7 +23,20 @@ var SandwichMaker = (function(oldMaker) {
 		return totalPrice;
 	}	
 	oldMaker.getFinalSandwich = () => {
-		return finalSandwich
+		return finalSandwich;
+	}
+	oldMaker.getSandwich = () => {
+		let domString = "";
+		for (let i=0; i < finalSandwich.length; i++) {
+			domString += `<p>${finalSandwich[i]}</p>`;
+		sandwichBox.innerHTML = domString;
+		}
+	}
+	oldMaker.printPrice = (final) => {
+		let domString = "";
+		domString += `<h3>Your Total Is: $${final}</h3>`
+		sandwichBox.innerHTML += domString;
+
 	}
 
 	return oldMaker;
