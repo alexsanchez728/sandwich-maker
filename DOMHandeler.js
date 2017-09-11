@@ -3,6 +3,7 @@ let proteinBox = document.getElementById("protein-container");
 let cheeseBox = document.getElementById("cheese-container");
 let condimentBox = document.getElementById("condiments-container");
 let veggiesBox = document.getElementById("veggies-container");
+let sandwichBox = document.getElementById("sandwich-container");
 let seePriceBtn = document.getElementById("totalBtn");
 // Variable to hold the final price. Default to 0.
 let finalSandwichPrice = 0;
@@ -21,7 +22,6 @@ breadBox.addEventListener("change", function(event) {
 
 	if (event.target.value.indexOf("No") === 0) {
 		console.log("No breads");
-
 	}
 
 	SandwichMaker.addBread(selectedTopping);
@@ -30,6 +30,7 @@ breadBox.addEventListener("change", function(event) {
 	finalSandwichPrice = SandwichMaker.getTotalPrice();
 	console.log("total price in public", finalSandwichPrice);
 
+	SandwichMaker.getSandwich();
 })
 
 
@@ -47,6 +48,7 @@ proteinBox.addEventListener("change", function(event) {
 
 	finalSandwichPrice = SandwichMaker.getTotalPrice();
 	console.log("total price in public", finalSandwichPrice);
+	SandwichMaker.getSandwich();
 
 })
 cheeseBox.addEventListener("change", function(event) {
@@ -63,6 +65,7 @@ cheeseBox.addEventListener("change", function(event) {
 
 	finalSandwichPrice = SandwichMaker.getTotalPrice();
 	console.log("total price in public", finalSandwichPrice);
+	SandwichMaker.getSandwich();
 
 })
 condimentBox.addEventListener("change", function(event) {
@@ -79,6 +82,7 @@ condimentBox.addEventListener("change", function(event) {
 
 	finalSandwichPrice = SandwichMaker.getTotalPrice();
 	console.log("total price in public", finalSandwichPrice);
+	SandwichMaker.getSandwich();
 
 })
 veggiesBox.addEventListener("change", function(event) {
@@ -95,13 +99,14 @@ veggiesBox.addEventListener("change", function(event) {
 
 	finalSandwichPrice = SandwichMaker.getTotalPrice();
 	console.log("total price in public", finalSandwichPrice);
+	SandwichMaker.getSandwich();
 
 })
 
 seePriceBtn.addEventListener("click", function(event) {
-	itemsInSandwich = SandwichMaker.getFinalSandwich();
-	console.log("sammie array", SammieArray);
-
+	
+	// console.log("final price", );
+	SandwichMaker.printPrice(finalSandwichPrice);
 })
 
 let myBreads = SandwichMaker.getBreads();
