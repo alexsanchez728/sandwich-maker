@@ -7,12 +7,12 @@ var SandwichMaker = (function(oldMaker) {
 	oldMaker.addBread = (selectedTopping) => {
 		SandwichMaker.addItemToSammie(selectedTopping, breadPrices[selectedTopping])
 		}
-
-		oldMaker.getBreads = () => {
+	oldMaker.getBreads = () => {
 	  for (let i = 0; i < breadKeys.length; i++) {
+
 	    let domString = "";
 	    domString+=    `<label class="form-check-label">`
-	    domString+=       `<input class="form-check-input" type="checkbox" id="bread-${[i]}" value="${breadKeys[i]}">`
+	    domString+=       `<input class="form-check-input" type="checkbox" value="${breadKeys[i]}">`
 	    domString+=       ` ${breadKeys[i]}`
 	    domString+=       `<div class="col-xs-1"</div>`
 	    domString+=    `</label>`

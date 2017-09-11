@@ -13,7 +13,6 @@ var SandwichMaker = (function(oldMaker) {
 			SandwichMaker.removeItemFromSammie(selectedTopping, toppingPrice);
 	}
 }
-
 	oldMaker.removeItemFromSammie = (unselectedTopping, unselectedPrice) => {
 		totalPrice -= unselectedPrice
 		let indexOfWhatWeWantToRemove = finalSandwich.indexOf(event.target.value);
