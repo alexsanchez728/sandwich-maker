@@ -5,6 +5,7 @@ let condimentBox = document.getElementById("condiments-container");
 let veggiesBox = document.getElementById("veggies-container");
 let sandwichBox = document.getElementById("sandwich-container");
 let seePriceBtn = document.getElementById("totalBtn");
+
 // Variable to hold the final price. Default to 0.
 let finalSandwichPrice = 0;
 // Variable to hold topping that the user selects
@@ -17,15 +18,13 @@ breadBox.addEventListener("change", function(event) {
 	itemsInSandwich = SandwichMaker.getFinalSandwich();
   selectedTopping = event.target.value;
 
-  // Get the value chosen from the DOM
-	console.log("selected Topping", selectedTopping);
-
 	if (event.target.value.indexOf("No") === 0) {
 		console.log("No breads");
 	}
 
 	SandwichMaker.addBread(selectedTopping);
 	console.log("finalSandwich items", itemsInSandwich);
+
 
 	finalSandwichPrice = SandwichMaker.getTotalPrice();
 	console.log("total price in public", finalSandwichPrice);
@@ -37,10 +36,10 @@ breadBox.addEventListener("change", function(event) {
 proteinBox.addEventListener("change", function(event) {
 	itemsInSandwich = SandwichMaker.getFinalSandwich();
 	selectedTopping = event.target.value
-	console.log(selectedTopping);
 
 	if (event.target.value.indexOf("No") === 0) {
-		console.log("No proteins");
+		console.log("chose none of this type", event.target.dataset["type"]);
+		// SandwichMaker.choseNone();
 	}
 
 	SandwichMaker.addProtein(selectedTopping);

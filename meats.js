@@ -5,14 +5,14 @@ var SandwichMaker = (function(oldMaker) {
   const proteinKeys = Object.keys(proteinPrices);
 
   oldMaker.addProtein = (selectedTopping) => {
-    SandwichMaker.addItemToSammie(selectedTopping, proteinPrices[selectedTopping])
+    SandwichMaker.addItemToSammie(selectedTopping, proteinPrices[selectedTopping], event.target.dataset["type"])
     }
   oldMaker.getProteins = () => {
     for (let i = 0; i < proteinKeys.length; i++) {
 
       let domString = "";
-      domString+=    `<label class="form-check-label">`
-      domString+=       `<input class="form-check-input" type="checkbox" value="${proteinKeys[i]}">`
+      domString+=    `<label class="form-check-label" >`
+      domString+=       `<input class="form-check-input" data-type="meat" type="checkbox" value="${proteinKeys[i]}">`
       domString+=       ` ${proteinKeys[i]}`
       domString+=       `<div class="col-xs-1"</div>`
       domString+=    `</label>`
