@@ -18,96 +18,66 @@ breadBox.addEventListener("change", function(event) {
   selectedTopping = event.target.value;
 
   // Get the value chosen from the DOM
-	console.log("selected Topping", selectedTopping);
-
-	if (event.target.value.indexOf("No") === 0) {
-		console.log("No breads");
-	}
-
 	SandwichMaker.addBread(selectedTopping);
-	console.log("finalSandwich items", itemsInSandwich);
 
 	finalSandwichPrice = SandwichMaker.getTotalPrice();
-	console.log("total price in public", finalSandwichPrice);
 
 	SandwichMaker.getSandwich();
-})
 
+});
 
 proteinBox.addEventListener("change", function(event) {
 	itemsInSandwich = SandwichMaker.getFinalSandwich();
 	selectedTopping = event.target.value
-	console.log(selectedTopping);
-
-	if (event.target.value.indexOf("No") === 0) {
-		console.log("No proteins");
-	}
 
 	SandwichMaker.addProtein(selectedTopping);
-	console.log("finalSandwich items", itemsInSandwich);
 
 	finalSandwichPrice = SandwichMaker.getTotalPrice();
-	console.log("total price in public", finalSandwichPrice);
+
 	SandwichMaker.getSandwich();
 
-})
+});
+
 cheeseBox.addEventListener("change", function(event) {
 	itemsInSandwich = SandwichMaker.getFinalSandwich();
 	selectedTopping = event.target.value
-	console.log(selectedTopping);
-
-	if (event.target.value.indexOf("No") === 0) {
-		console.log("No cheese");
-	}
 
 	SandwichMaker.addCheese(selectedTopping);
-	console.log("finalSandwich items", itemsInSandwich);
 
 	finalSandwichPrice = SandwichMaker.getTotalPrice();
-	console.log("total price in public", finalSandwichPrice);
+
 	SandwichMaker.getSandwich();
 
-})
+});
+
 condimentBox.addEventListener("change", function(event) {
 	itemsInSandwich = SandwichMaker.getFinalSandwich();
 	selectedTopping = event.target.value
-	console.log(selectedTopping);
-
-	if (event.target.value.indexOf("No") === 0) {
-		console.log("No Condiment");
-	}
 
 	SandwichMaker.addCondiment(selectedTopping);
-	console.log("finalSandwich items", itemsInSandwich);
 
 	finalSandwichPrice = SandwichMaker.getTotalPrice();
-	console.log("total price in public", finalSandwichPrice);
+
 	SandwichMaker.getSandwich();
 
-})
+});
+
 veggiesBox.addEventListener("change", function(event) {
 	itemsInSandwich = SandwichMaker.getFinalSandwich();
 	selectedTopping = event.target.value
-	console.log(selectedTopping);
-
-	if (event.target.value.indexOf("No") === 0) {
-		console.log("No veggies");
-	}
 
 	SandwichMaker.addVeggies(selectedTopping);
-	console.log("finalSandwich items", itemsInSandwich);
 
 	finalSandwichPrice = SandwichMaker.getTotalPrice();
-	console.log("total price in public", finalSandwichPrice);
+
 	SandwichMaker.getSandwich();
 
-})
+});
 
 seePriceBtn.addEventListener("click", function(event) {
 	
-	// console.log("final price", );
 	SandwichMaker.printPrice(finalSandwichPrice);
-})
+});
 
 let myBreads = SandwichMaker.getBreads();
 let myMeats = SandwichMaker.getProteins();

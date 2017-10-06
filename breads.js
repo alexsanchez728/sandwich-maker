@@ -1,7 +1,7 @@
 
 // This SandwichMaker IIFE augments the original one
 var SandwichMaker = (function(oldMaker) {
-	const breadPrices = {"Wheat": 2.00, "Rye": 2.75, "Boule": 5.75, "No Bread": 0};
+	const breadPrices = {"Wheat": 2.00, "Rye": 2.75, "Boule": 5.75};
 	const breadKeys = Object.keys(breadPrices);
 
 	oldMaker.addBread = (selectedTopping) => {

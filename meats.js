@@ -1,7 +1,7 @@
 
 // This SandwichMaker IIFE augments the original one
 var SandwichMaker = (function(oldMaker) {
-	const proteinPrices = {"Turkey": 2.00, "Ham": 3.00, "Boudin": 5.50, "No Meat": 0};
+	const proteinPrices = {"Turkey": 2.00, "Ham": 3.00, "Boudin": 5.50};
   const proteinKeys = Object.keys(proteinPrices);
 
   oldMaker.addProtein = (selectedTopping) => {

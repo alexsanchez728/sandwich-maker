@@ -29,7 +29,11 @@ var SandwichMaker = (function(oldMaker) {
 		let domString = "";
 		for (let i=0; i < finalSandwich.length; i++) {
 			domString += `<p>${finalSandwich[i]}</p>`;
-		sandwichBox.innerHTML = domString;
+			sandwichBox.innerHTML = domString;
+		}			
+		if(finalSandwich.length === 0) {
+				domString = "";
+				sandwichBox.innerHTML = domString;
 		}
 	}
 	oldMaker.printPrice = (final) => {
